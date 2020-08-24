@@ -11,7 +11,11 @@ public class CartController {
 	
 	@RequestMapping("/cart") // URL "/shop/cart" 로 매핑함
 	public String cart() {
-		
+		CartVO vo;
+		vo = dao.readCart(1);
+		System.out.println(vo.toString());
+		vo = dao.readCart(2);
+		System.out.println(vo.toString());
 		return "cart"; //cart.jsp 보여줌
 	}
 }

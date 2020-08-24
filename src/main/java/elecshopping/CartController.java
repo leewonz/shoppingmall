@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -11,7 +12,22 @@ public class CartController {
 	@Autowired
 	CartService svc;
 	
+@RequestMapping("/cart") // URL "/shop/cart" 로 매핑함
+	
+	public String cart(Model model) {
+		ArrayList<CartVO> voList;
+		String id = "ple";
+		
+		voList = svc.readCarts(id);
+		
+		model.addAttribute("id", id);
+		model.addAttribute("voList", voList);
+		
+		return "cart"; //cart.jsp 보여줌
+	}	
+	/*
 	@RequestMapping("/cart") // URL "/shop/cart" 로 매핑함
+	
 	public String cart() {
 		CartVO vo;
 		ArrayList<CartVO> voList;
@@ -33,5 +49,5 @@ public class CartController {
 		vo = svc.deleteCart(5);
 		System.out.println("cnum=2 삭제: " + vo.toString());
 		return "cart"; //cart.jsp 보여줌
-	}
+	}*/
 }

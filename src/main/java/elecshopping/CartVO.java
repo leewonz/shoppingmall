@@ -1,9 +1,9 @@
 package elecshopping;
 
-//	Àå¹Ù±¸´Ï Å×ÀÌºí CART
-//- CNUM 	(NUMBER)	Ä«Æ® ¹øÈ£		PK
-//- ID 		(STRING)	»ç¿ëÀÚ ¾ÆÀÌµð	FK
-//- PNUM 	(NUMBER)	»óÇ°¸í		FK
+//	ï¿½ï¿½Ù±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ìºï¿½ CART
+//- CNUM 	(NUMBER)	Ä«Æ® ï¿½ï¿½È£		PK
+//- ID 		(STRING)	ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ìµï¿½	FK
+//- PNUM 	(NUMBER)	ï¿½ï¿½Ç°ï¿½ï¿½		FK
 
 
 public class CartVO {
@@ -11,6 +11,9 @@ public class CartVO {
 	private String id;
 	private int pnum;
 	
+	public CartVO(int cnum2, String id2, int pnum2) {
+		// TODO Auto-generated constructor stub
+	}
 	public int getCnum() {
 		return cnum;
 	}

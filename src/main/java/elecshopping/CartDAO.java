@@ -12,6 +12,9 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import org.springframework.stereotype.Component;
+
+@Component("cartdao")
 public class CartDAO {
 	
 	public int createCart(String id, int pnum) {

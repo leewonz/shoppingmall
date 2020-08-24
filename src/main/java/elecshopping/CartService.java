@@ -1,5 +1,8 @@
 package elecshopping;
 
+import org.springframework.stereotype.Component;
+
+@Component("cartsvc")
 public class CartService {
 	private CartDAO dao;
 	

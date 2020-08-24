@@ -19,7 +19,8 @@ public class CartDAO {
 	
 	public int createCart(String id, int pnum) {
 
-		String sql = "INSERT into cart (id, pnum)" + " values(?, ?)";
+		String sql = "INSERT into cart (cnum, id, pnum)" + 
+		" values((SELECT NVL(MAX(cnum),0)+1 FROM cart), ?, ?)";
 		Connection con = null;
 		PreparedStatement ps = null;
 		int row = 0;
@@ -72,8 +73,8 @@ public class CartDAO {
 	}
 	
 	public CartVO readCart(int cnum){
-		String sql = "select * from cart "
-				+ "where (id = ? and pnum = ?)";
+		String sql = "select * from cart"
+				+ " where cnum = ?";
 		Connection con = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;
@@ -88,10 +89,15 @@ public class CartDAO {
 			rs = ps.executeQuery();
 			
 				while(rs.next()) {
-					int pnum = rs.getInt("pnum");
-					String id = rs.getString("id");
 					
+					int pnum = rs.getInt("pnum");
+					
+					String id = rs.getString("id");
+//					System.out.println(cnum);
+//					System.out.println(id);
+//					System.out.println(pnum);
 					result = new CartVO(cnum, id, pnum);
+//					System.out.println(result);
 				}
 		}catch (Exception e) {
 			System.out.println(e.toString());
@@ -151,8 +157,6 @@ public class CartDAO {
 
 			row = ps.executeUpdate();
 			
-			System.out.printf("%d개의 행이 영향받음%n", row);
-			
 		}catch (Exception e) {
 			System.out.println(e.toString());
 		}finally {
@@ -162,9 +166,9 @@ public class CartDAO {
 	}
 	
 	public int deleteCart(
-			int pnum){
+			int cnum){
 		String sql = "delete from cart "
-				+ "where pnum = ?";
+				+ "where cnum = ?";
 		Connection con = null;
 		PreparedStatement ps = null;
 		int row = 0;
@@ -173,7 +177,7 @@ public class CartDAO {
 			ps = con.prepareStatement(sql);
 			
 			//?세팅작업
-			ps.setInt(1, pnum);
+			ps.setInt(1, cnum);
 
 			row = ps.executeUpdate();
 			
@@ -220,7 +224,7 @@ class JDBCUtil {
 		} catch (Exception e) {
 
 		}
-
+		//System.out.println(con);
 		return con;
 	}
 

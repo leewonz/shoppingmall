@@ -11,9 +11,14 @@ public class CartVO {
 	private String id;
 	private int pnum;
 	
-	public CartVO(int cnum2, String id2, int pnum2) {
-		// TODO Auto-generated constructor stub
+	
+	
+	public CartVO(int cnum, String id, int pnum) {
+		this.cnum = cnum;
+		this.id = id;
+		this.pnum = pnum;
 	}
+	
 	public int getCnum() {
 		return cnum;
 	}

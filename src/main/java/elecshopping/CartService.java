@@ -1,5 +1,7 @@
 package elecshopping;
 
+import java.util.ArrayList;
+
 import org.springframework.stereotype.Component;
 
 @Component("cartsvc")
@@ -33,6 +35,10 @@ public class CartService {
 	
 	public CartVO readCart(int cnum) {
 		return dao.readCart(cnum);
+	}
+	
+	public ArrayList<CartVO> readCarts(String id) {
+		return dao.readCarts(id);
 	}
 	
 	public CartVO updateCart(int cnum, CartVO vo) {

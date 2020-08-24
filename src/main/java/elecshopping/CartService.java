@@ -41,6 +41,10 @@ public class CartService {
 		return dao.readCarts(id);
 	}
 	
+	public ArrayList<CartVO> readCarts() {
+		return dao.readCarts();
+	}
+	
 	public CartVO updateCart(int cnum, CartVO vo) {
 		int rows = dao.updateCart(cnum, vo);
 		if(rows >= 1)

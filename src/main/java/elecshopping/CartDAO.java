@@ -139,6 +139,34 @@ public class CartDAO {
 		return result;
 	}
 	
+	public ArrayList<CartVO> readCarts(){
+		String sql = "select * from cart ";
+		Connection con = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		ArrayList<CartVO> result = new ArrayList<CartVO>();
+		try {
+			con = JDBCUtil.getConnection();
+			ps = con.prepareStatement(sql);
+
+			rs = ps.executeQuery();
+			
+				while(rs.next()) {
+					int cnum = rs.getInt("cnum");
+					String id = rs.getString("id");
+					int pnum = rs.getInt("pnum");
+					
+					result.add(new CartVO(cnum, id, pnum));
+				}
+		}catch (Exception e) {
+			System.out.println(e.toString());
+			e.printStackTrace();
+		}finally {
+			JDBCUtil.close(con, ps, null);
+		}
+		return result;
+	}
+	
 	public int updateCart(
 			int cnum, CartVO vo){
 		String sql = "update cart set id = ?, pnum = ? "

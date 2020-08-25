@@ -169,8 +169,8 @@ public class CartDAO {
 	
 	public int updateCart(
 			int cnum, CartVO vo){
-		String sql = "update cart set id = ?, pnum = ? "
-				+ "where cnum = ?";
+		String sql = "update cart set id = ?, pnum = ?"
+				+ " where cnum = ?";
 		Connection con = null;
 		PreparedStatement ps = null;
 		int row = 0;
@@ -208,8 +208,6 @@ public class CartDAO {
 			ps.setInt(1, cnum);
 
 			row = ps.executeUpdate();
-			
-			System.out.printf("%d개의 행이 영향받음%n", row);
 			
 		}catch (Exception e) {
 			System.out.println(e.toString());
@@ -290,7 +288,7 @@ class JDBCUtil {
 						pw = value;
 						break;
 					default:
-						System.out.println("db 연결 파일에 키 " + key + "가 없습니다.");
+						System.out.println("CartDAO db 연결 파일에 키 " + key + "가 없습니다.");
 					}
 				}
 			}

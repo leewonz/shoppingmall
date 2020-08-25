@@ -35,4 +35,10 @@ public class LoginController {
 		}
 		else return "login";
 	}
+	
+	@RequestMapping("/login")
+	public String login() {
+		return "login";
+	}
+}
 

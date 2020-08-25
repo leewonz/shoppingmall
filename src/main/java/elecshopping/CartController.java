@@ -3,6 +3,7 @@ package elecshopping;
 import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,13 +17,18 @@ public class CartController {
 	CartService svc;
 
 	@RequestMapping("/cart") // URL "/shop/cart" 로 매핑함
-	public String cart(Model model) {
+	public String cart(HttpServletRequest req, Model model) {
 		ArrayList<CartVO> voList;
-		String id = "ple";
-
+		String name = "ple";
+		String id;
+		
+		HttpSession sess = req.getSession();
+		//id = (String) sess.getAttribute("id");
+		id = "ple";
+		
 		voList = svc.readCarts(id);
 
-		model.addAttribute("id", id);
+		model.addAttribute("name", name);
 		model.addAttribute("voList", voList);
 
 		return "cart"; // cart.jsp 보여줌
@@ -30,8 +36,8 @@ public class CartController {
 
 	@RequestMapping("/carttest") // URL "/shop/carttest" 로 매핑함
 	public String carttest() {
-		
-		return "carttest"; // carttest.jsp 보여줌
+		svc.createCart("ple", 3);
+		return "redirect:/cart"; // carttest.jsp 보여줌
 	}
 	
 	@RequestMapping("/cartdelete") // URL "/shop/cartdelete" 로 매핑함

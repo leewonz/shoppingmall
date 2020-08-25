@@ -26,9 +26,12 @@
 </head>
 <body>
   <h1>장바구니 페이지</h1>
-  ${id}님이 장바구니에 추가하신 상품의 목록입니다.
+  ${name}님이 장바구니에 추가하신 상품의 목록입니다.
   <br>
   <br>
+  <form action="carttest">
+    <input type="submit" value="추가" />
+  </form>
   <table class="cart-tb">
     <tr>
       <th class="cart-th">번호</th>
@@ -44,12 +47,13 @@
         <td class="cart-td">${vo.cnum}</td>
         <td class="cart-td">
           <form action="cartdelete">
-            <input type="hidden" name="cnum" value="${vo.cnum}" />
-            <input type="submit" value="삭제" />
+            <input type="hidden" name="cnum" value="${vo.cnum}" /> <input
+              type="submit" value="삭제" />
           </form>
         </td>
       </tr>
     </c:forEach>
   </table>
+  
 </body>
 </html>

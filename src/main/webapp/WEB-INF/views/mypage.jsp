@@ -37,7 +37,7 @@
 					</a></li>
 					<li class="nav-item"><a class="nav-link" href="/shop/login">Login</a></li>
 					<li class="nav-item"><a class="nav-link" href="/shop/mypage">My page</a></li>
-					<li class="nav-item"><a class="nav-link" href="/shop/signup">SignUp</a></li>
+					<li class="nav-item"><a class="nav-link" href="/signup">SignUp</a></li>
 				</ul>
 			</div>
 		</div>

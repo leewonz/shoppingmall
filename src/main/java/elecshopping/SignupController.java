@@ -20,7 +20,7 @@ public class SignupController {
 	
 	@RequestMapping("signup")
 	public String signup(MemberVO vo) {
-		
+
 		return "signup";
 	}
 	
@@ -32,6 +32,7 @@ public class SignupController {
 		if(memberDAO.addMember(vo) != null) return "redirect:/login.do";
 		else return "signup";
 	}
+
 	@RequestMapping(value="/signUp.do", method=RequestMethod.POST)
 	public String signup(MemberVO vo, MemberDAO memberDAO) {
 	
@@ -49,6 +50,4 @@ public class SignupController {
 		String memberid = request.getParameter("memberid");
 		return memberDAO.idCheck(memberid);
 	}
-	
-	
 }

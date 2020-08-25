@@ -10,7 +10,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>customerlist</title>
+<title>mypage for admin</title>
 <script src="/shop/resources/jquery-3.2.1.min.js"></script>
 <!-- Bootstrap core CSS -->
 <link href="/shop/resources/vendor/bootstrap/css/bootstrap.min.css"
@@ -18,10 +18,9 @@
 
 <!-- Custom styles for this template -->
 <link href="/shop/resources/css/shop-homepage.css" rel="stylesheet">
-
 <style>
-.table{
-	margin-bottom: 50px;
+#mode {
+	align-content: center;
 }
 </style>
 </head>
@@ -51,20 +50,12 @@
 
 
 	<!-- Page Content -->
-	<div class="container">
+	<div class="container" id="mode">
 		<div class="row">
-			<div class="list-group">
-
-				<h1 class="my-4">회원 리스트</h1>
-
-				<table class="table" border="3px">
-					<c:forEach items="${customerlist }" var="vo">
-						<tr>
-							<td><a href="/shop/customerdetail?id=${vo.id }">${vo.id }</a></td>
-							<td>${vo.name }</td>
-						</tr>
-					</c:forEach>
-				</table>
+			<div class="my-4">
+				<a href="/shop/customerlist">회원 관리 모드</a>
+				<hr>
+				<a href="/shop/customerlist">상품 관리 모드</a>
 			</div>
 		</div>
 	</div>
@@ -72,7 +63,8 @@
 	<!-- Footer -->
 	<footer class="py-5 bg-dark">
 		<div class="container">
-			<p class="m-0 text-center text-white">Copyright &copy; Multi Campus 2020</p>
+			<p class="m-0 text-center text-white">Copyright &copy; Multi
+				Campus 2020</p>
 		</div>
 		<!-- /.container -->
 	</footer>

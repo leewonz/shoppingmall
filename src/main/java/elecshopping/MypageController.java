@@ -1,6 +1,8 @@
 package elecshopping;
 
+
 import java.util.ArrayList;
+
 
 import javax.servlet.http.HttpSession;
 
@@ -12,7 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class MypageController {
 	
-	
+
 	@Autowired
 	MypageDAO dao;
 	
@@ -24,7 +26,9 @@ public class MypageController {
 		mv.addObject("myinfo", myinfo);
 		mv.setViewName("mypage");
 		return mv;
+
 	}
+
 	
 	@RequestMapping("/mypageedit")
 	public ModelAndView MypageEdit(HttpSession session) {
@@ -34,6 +38,7 @@ public class MypageController {
 		mv.addObject("myinfo", myinfo);
 		mv.setViewName("mypageedit");
 		return mv;
+
 	}
 	
 	@RequestMapping("/infoEdit.do")

@@ -1,13 +1,15 @@
 package elecshopping;
 
 public class MemberVO {
-	   String memberid; //컬럼
-	   String password;
-	   String name;
-	   String email;
-	   String phone;
-	   String address;
-	   String gender;
+
+	String memberid;
+	String password;
+	String name;
+	String email;
+	String phone;
+	String address;
+	String gender;
+
 	public String getMemberid() {
 		return memberid;
 	}
@@ -32,6 +34,8 @@ public class MemberVO {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+
+
 	public String getAddress() {
 		return address;
 	}
@@ -53,4 +57,3 @@ public class MemberVO {
 	   
 	   
 	}
-

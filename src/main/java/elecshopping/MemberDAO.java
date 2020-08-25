@@ -44,7 +44,7 @@ public class MemberDAO {
 	
 	public MemberVO addMember(MemberVO vo) {
 		MemberVO member = null;
-		String sql = "insert into member (id, pw, name, phone, admin) values(?, ?, ?, ?, ?)";
+		String sql = "insert into customer (id, pw, name, phone, admin) values(?, ?, ?, ?, ?)";
 
 		try { 
 			Class.forName("oracle.jdbc.driver.OracleDriver");

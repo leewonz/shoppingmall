@@ -13,7 +13,7 @@
 <meta name="author" content="">
 
 	<title>Insert title here</title>
-<script src="/resources/jquery-3.2.1.min.js"></script>
+<script src="/shop/resources/jquery-3.2.1.min.js"></script>
 <!-- Bootstrap core CSS -->
 <link href="/shop/resources/vendor/bootstrap/css/bootstrap.min.css"
 	rel="stylesheet">

@@ -1,7 +1,7 @@
 package elecshopping;
 
 public class MypageVO {
-	
+
 	String id;
 	String pw;
 	String name;
@@ -37,8 +37,6 @@ public class MypageVO {
 	public void setAdmin(int admin) {
 		this.admin = admin;
 	}
-	
-	
 	
 
 }

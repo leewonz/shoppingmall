@@ -1,5 +1,6 @@
 package elecshopping;
 
+
 import java.io.Console;
 
 import javax.servlet.http.HttpSession;
@@ -35,5 +36,9 @@ public class LoginController {
 		else return "login";
 	}
 	
-	
+	@RequestMapping("/login")
+	public String login() {
+		return "login";
+	}
 }
+

@@ -5,8 +5,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class CartController {
-	@RequestMapping("/cart") // URL "/shop/cart" 로 매핑함
+
+	
+	@RequestMapping("/cart")
 	public String cart() {
-		return "cart"; //cart.jsp 보여줌
+		return "cart";
+
 	}
 }
